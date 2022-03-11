@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang=es>
+	<head>
+		<meta charset=utf-8 />
+		<meta name=viewport content="width=device-width, initial-scale=1" />
+		<meta name=author content='mjaque@migueljaque.com' />
+		<title>Consulta de Multas</title>
+
+		<link rel=stylesheet href=css/reset.css />
+		<link rel=stylesheet href=css/ex_js.css />
+	</head>
+
+	<body>
+		<h1>Consulta de Multas</h1>
+		<p>Este formulario le permite consultar las multas de tráfico de un vehículo en una localidad desde una fecha:</p>
+		<form>
+			<label for=iMatricula>Matrícula:</label>
+			<input type=text id=iMatricula />
+			<label for=iFecha>Fecha: </label>
+			<input type=date id=iFecha />
+			<br />
+			<label for=iProvincia>Provincia</label>
+			<select id=iProvincia onchange="ponerLocalidad()"/>
+				<option> </option>
+				<option value=Badajoz>Badajoz</option>
+				<option value=Caceres>Cáceres</option>
+			</select>
+			<label for=iLocalidad>Localidad</label>
+			<select id=iLocalidad></select>
+			<br />
+			<input type="button" id="iBoton" value="Buscar" onclick="validarFormulario()"></input>
+			<!--button onclick="esFuturo()">Buscar</button>-->
+		</form>
+		<hr />
+		<div id=divError>
+			<p id=pError><p>
+		</div>
+		<h2>Resultados de la Búsqueda</h2>
+		<table id="iTabla">
+
+		</table>
+		<script src=js/resultado.js></script>
+		<script src=js/ex_js.js></script>
+
+		</script>
+	</body>
+
+</html>
